@@ -1,0 +1,171 @@
+.toolbar-bright-blue {
+  --bright-blue-panel: #f7faff;
+  --bright-blue-edge: #8ca9fa;
+  --bright-blue-divider: #b6c8ed;
+  --bright-blue-ink: #19345c;
+  --bright-blue-hover: #e8efff;
+  --bright-blue-selected: #dce8ff;
+  --bright-blue-selected-ink: #153fba;
+  --bright-blue-focus: #2459e0;
+  --bright-blue-draw: #2052e6;
+  --bright-blue-draw-hover: #1944c9;
+  --bright-blue-draw-selected: #1436aa;
+}
+
+.theme--dark .toolbar-bright-blue {
+  --bright-blue-panel: #171f33;
+  --bright-blue-edge: #5976c6;
+  --bright-blue-divider: #425779;
+  --bright-blue-ink: #e1eaff;
+  --bright-blue-hover: #243552;
+  --bright-blue-selected: #293e70;
+  --bright-blue-selected-ink: #d4e2ff;
+  --bright-blue-focus: #a4bdff;
+  --bright-blue-draw: #2857df;
+  --bright-blue-draw-hover: #2d5ee9;
+  --bright-blue-draw-selected: #2450d3;
+}
+
+.toolbar-bright-blue .App-toolbar.Island {
+  background-color: var(--bright-blue-panel);
+  border-radius: 0.75rem;
+  outline: 1px solid var(--bright-blue-edge);
+  outline-offset: -1px;
+  padding: 5px;
+}
+
+.toolbar-bright-blue .App-toolbar > .Stack_horizontal {
+  align-items: center;
+  gap: 4px;
+}
+
+.toolbar-bright-blue .App-toolbar--compact > .Stack_horizontal {
+  gap: 2px;
+}
+
+.toolbar-bright-blue .App-toolbar > .Stack_horizontal > .App-toolbar__divider {
+  display: none;
+}
+
+/* Boundaries before the first shape and before the pencil. */
+.toolbar-bright-blue .App-toolbar > .Stack_horizontal > :is(
+  [data-testid="toolbar-rectangle"],
+  [data-testid="toolbar-freedraw"]
+) {
+  margin-inline-start: 8px;
+}
+
+.toolbar-bright-blue .App-toolbar > .Stack_horizontal > :is(
+  [data-testid="toolbar-rectangle"],
+  [data-testid="toolbar-freedraw"]
+)::before {
+  content: "";
+  position: absolute;
+  inset-inline-start: -6px;
+  inset-block: 22%;
+  border-inline-start: 1px solid var(--bright-blue-divider);
+  pointer-events: none;
+}
+
+.toolbar-bright-blue .App-toolbar > .Stack_horizontal > .ToolIcon,
+.toolbar-bright-blue .App-toolbar__extra-tools-trigger {
+  --icon-fill-color: var(--bright-blue-ink);
+  --button-hover-bg: var(--bright-blue-hover);
+  --color-surface-primary-container: var(--bright-blue-selected);
+  --color-on-primary-container: var(--bright-blue-selected-ink);
+  --focus-highlight-color: var(--bright-blue-focus);
+  position: relative;
+}
+
+.toolbar-bright-blue .App-toolbar__extra-tools-trigger {
+  color: var(--bright-blue-ink);
+}
+
+.toolbar-bright-blue .App-toolbar__extra-tools-trigger:hover {
+  background-color: var(--bright-blue-hover);
+}
+
+.toolbar-bright-blue .App-toolbar__extra-tools-trigger--selected,
+.toolbar-bright-blue .App-toolbar__extra-tools-trigger--selected:hover {
+  background-color: var(--bright-blue-selected);
+  color: var(--bright-blue-selected-ink);
+}
+
+.toolbar-bright-blue .App-toolbar > .Stack_horizontal > .ToolIcon--checked > .ToolIcon__icon::after,
+.toolbar-bright-blue .App-toolbar__extra-tools-trigger--selected::after {
+  content: "";
+  position: absolute;
+  inset-inline: 0;
+  bottom: 3px;
+  margin-inline: auto;
+  width: 12px;
+  border-block-end: 2px solid currentColor;
+  border-radius: 2px;
+  pointer-events: none;
+}
+
+.toolbar-bright-blue .App-toolbar > .Stack_horizontal > .ToolIcon--checked > .ToolIcon__icon {
+  color: var(--bright-blue-selected-ink);
+}
+
+.toolbar-bright-blue .App-toolbar > .Stack_horizontal > [data-testid="toolbar-freedraw"]:enabled {
+  background-color: var(--bright-blue-draw);
+  color: #fff;
+}
+
+.toolbar-bright-blue .App-toolbar > .Stack_horizontal > [data-testid="toolbar-freedraw"]:enabled:hover {
+  background-color: var(--bright-blue-draw-hover);
+}
+
+.toolbar-bright-blue .App-toolbar > .Stack_horizontal > [data-testid="toolbar-freedraw"][aria-pressed="true"]:enabled {
+  background-color: var(--bright-blue-draw-selected);
+}
+
+.toolbar-bright-blue .App-toolbar > .Stack_horizontal > [data-testid="toolbar-freedraw"]:enabled > .ToolIcon__icon {
+  --icon-fill-color: currentColor;
+  --color-on-primary-container: currentColor;
+  --keybinding-color: currentColor;
+  color: inherit;
+  background: transparent;
+  border: none;
+}
+
+.toolbar-bright-blue .App-toolbar:not(.App-toolbar--compact) > .Stack_horizontal > [data-testid="toolbar-freedraw"] {
+  gap: 6px;
+  padding-inline: 10px 16px;
+}
+
+.toolbar-bright-blue .App-toolbar:not(.App-toolbar--compact) > .Stack_horizontal > [data-testid="toolbar-freedraw"] > .ToolIcon__icon {
+  width: auto;
+}
+
+.toolbar-bright-blue .App-toolbar:not(.App-toolbar--compact) > .Stack_horizontal > [data-testid="toolbar-freedraw"]::after {
+  content: attr(aria-label);
+  content: attr(aria-label) / "";
+  font: 700 0.8125rem/1 var(--ui-font);
+  white-space: nowrap;
+}
+
+.toolbar-bright-blue .App-toolbar:not(.App-toolbar--compact) > .Stack_horizontal > [data-testid="toolbar-freedraw"] > .ToolIcon__icon > .ToolIcon__keybinding {
+  inset-inline: auto 4px;
+}
+
+@media (max-width: 680px) {
+  .toolbar-bright-blue .App-toolbar--compact {
+    --lg-button-size: 2rem;
+  }
+
+  .toolbar-bright-blue .App-toolbar--compact > .Stack_horizontal > :is(
+    [data-testid="toolbar-rectangle"],
+    [data-testid="toolbar-freedraw"]
+  ) {
+    margin-inline-start: 6px;
+  }
+
+  .toolbar-bright-blue .App-toolbar--compact > .Stack_horizontal > :is(
+    [data-testid="toolbar-rectangle"],
+    [data-testid="toolbar-freedraw"]
+  )::before {
+    inset-inline-start: -4px;
+  }
+}
