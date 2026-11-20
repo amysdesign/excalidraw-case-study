@@ -1,9 +1,27 @@
 {
-  "title": "",
-  "summary": "",
-  "favorite": "",
-  "variations": [],
-  "video": null,
-  "pr": null,
-  "updated": ""
+  "title": "Bright Blue toolbar for Excalidraw",
+  "summary": "Bright Blue separates navigation and shapes from a prominent cobalt Draw button, and underlines the active tool so it's clear without relying on color. It's now the default toolbar.",
+  "favorite": "bright-blue",
+  "variations": [
+    {
+      "slug": "bright-blue",
+      "name": "Bright Blue",
+      "idea": "Separate selection and shapes from a cobalt Draw button, and underline the active tool.",
+      "screenshot": "shots/bright-blue.png",
+      "why": "The Draw button is easy to spot, and tool groups are clearly separated."
+    }
+  ],
+  "video": {
+    "src": "demo.mp4",
+    "captions": "demo.vtt",
+    "poster": "demo.jpg",
+    "title": "A 20-second tour of the Bright Blue toolbar"
+  },
+  "pr": {
+    "url": "https://github.com/amysdesign/excalidraw-case-study/pull/1",
+    "title": "Toolbar: Publish Bright Blue as the default",
+    "number": 1,
+    "status": "merged"
+  },
+  "updated": "2026-11-19"
 }
